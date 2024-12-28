@@ -30,3 +30,20 @@ Un programa que utiliza la API de Pokémon para mostrar información sobre un Po
   Tipo(s) del Pokémon.
  Movimientos principales del Pokémon.
  Stats de movimistos y su poder
+
+### 4. 🎯 **Acortador de URL**
+Un programa que permite al usuario ingresar una URL, y esto genera una URL mas corta de la orginal que enviar
+al sitio web sin ningun problema, esto fue creado con la ayuda de githubcopilot y de la libreria streamlit.
+
+#### Características:
+- El usuario ingresa la URL larga.
+- El programa muestra:
+  Una nueva URL mas corta y sencilla de leer
+
+### 4. 🕹️ **Generador de QR**
+Es una aplicación web sencilla que permite al usuario mediante una interfaz grafica hecha con la ayuda de copilot ingresar una url y el programa será capaz de generar un QR que al detectarlo permite direccionar a esta pagina.
+
+#### Características:
+- El usuario ingresa la URL larga.
+- El programa muestra:
+  Un QR que redirecciona a la dirección ingresada anteriormente
