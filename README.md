@@ -40,7 +40,7 @@ al sitio web sin ningun problema, esto fue creado con la ayuda de githubcopilot 
 - El programa muestra:
   Una nueva URL mas corta y sencilla de leer
 
-### 4. 🕹️ **Generador de QR**
+### 5. 🕹️ **Generador de QR**
 Es una aplicación web sencilla que permite al usuario mediante una interfaz grafica hecha con la ayuda de copilot ingresar una url y el programa será capaz de generar un QR que al detectarlo permite direccionar a esta pagina.
 
 #### Características:
