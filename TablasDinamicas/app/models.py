@@ -6,3 +6,7 @@ class Programmer(models.Model):
     name=models.CharField(max_length=50)
     country=models.CharField(max_length=3)
     birthday=models.DateField()
+    score=models.PositiveBigIntegerField()
+
+    class Meta:
+        db_table='programmer'
