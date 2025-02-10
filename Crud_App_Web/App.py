@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'root'
-app.config['MYSQL_db'] = 'flaskcontact'
+app.config['MYSQL_DB'] = 'flaskcontact'
 
 mysql = MySQL(app)
 
@@ -17,16 +17,18 @@ mysql = MySQL(app)
 def Index():
     return render_template('index.html')
 
-##Se crea ventana de añadir contacto
+##Se crea ventana de añadir contacto y se conecta con el formulario
 @app.route('/añadir', methods=['POST'])
 def añadir_contacto():
     if request.method == 'POST':
         fullname = request.form['fullname']
         phone = request.form['phone']
         email = request.form['email']
-        print(fullname)
-        print(phone)
-        print(email)
+        #creamos conector para enviar los datos a la base de datos
+        cur = mysql.connection.cursor()
+        cur.execute('insert into contacts (fullname, phone, email) values (%s, %s, %s)', (fullname, phone, email))
+        #ejecutamos la consulta
+        mysql.connection.commit()
         return 'dato recibido'
 
 ##Se crea ventana de editar contacto
