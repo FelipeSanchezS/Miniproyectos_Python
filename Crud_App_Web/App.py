@@ -1,8 +1,10 @@
-from flask import Flask
+#Importamos librerias
+from flask import Flask, render_template
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 
+##Se crea la conxion a la base de datos
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'root'
@@ -10,19 +12,22 @@ app.config['MYSQL_db'] = 'flaskcontact'
 
 mysql = MySQL(app)
 
-
+##Se crea seccion inicial y se llama a la pagina index.html
 @app.route('/')
 def Index():
-    return 'Hello World'
+    return render_template('index.html')
 
-@app.route('/añadir')
+##Se crea ventana de añadir contacto
+@app.route('/añadir', method=['POST'])
 def añadir_contacto():
-    return 'Sección de añadir contacto'
+    
 
+##Se crea ventana de editar contacto
 @app.route('/editar')
 def editar_contacto():
     return 'Sección editar contacto'
 
+##Se crea ventana de eliminar contacto
 @app.route('/eliminar')
 def eliminar_contacto():
     return 'Sección eliminar contacto'
