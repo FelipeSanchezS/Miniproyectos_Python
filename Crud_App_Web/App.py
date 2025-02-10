@@ -1,8 +1,9 @@
 #Importamos librerias
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for, redirect, flash
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
+
 
 ##Se crea la conxion a la base de datos
 app.config['MYSQL_HOST'] = 'localhost'
@@ -11,6 +12,9 @@ app.config['MYSQL_PASSWORD'] = 'root'
 app.config['MYSQL_DB'] = 'flaskcontact'
 
 mysql = MySQL(app)
+
+#iniciamos sesion
+app.secret_key = 'mysecretkey'
 
 ##Se crea seccion inicial y se llama a la pagina index.html
 @app.route('/')
@@ -29,7 +33,8 @@ def añadir_contacto():
         cur.execute('insert into contacts (fullname, phone, email) values (%s, %s, %s)', (fullname, phone, email))
         #ejecutamos la consulta
         mysql.connection.commit()
-        return 'dato recibido'
+        flash('El contacto se grego de forma correcta')
+        return redirect(url_for('Index'))
 
 ##Se crea ventana de editar contacto
 @app.route('/editar')

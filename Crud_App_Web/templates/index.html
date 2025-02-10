@@ -8,6 +8,14 @@
 <body>
 
     <h1>Formulario de Registro</h1>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+        <p>{{message}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
     <!-- El añadir es la ventana que se creo para añadir contactos -->
     <form action="/añadir" method="POST">
         <label for="nombre">Nombre Completo:</label>
