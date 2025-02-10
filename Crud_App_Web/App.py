@@ -33,18 +33,25 @@ def añadir_contacto():
         cur.execute('insert into contacts (fullname, phone, email) values (%s, %s, %s)', (fullname, phone, email))
         #ejecutamos la consulta
         mysql.connection.commit()
-        flash('El contacto se grego de forma correcta')
+        #Este mensaje muestra cuando se agrega de forma correcta a la base de datos
+        flash('El contacto se agrego de forma correcta')
         return redirect(url_for('Index'))
+
+
 
 ##Se crea ventana de editar contacto
 @app.route('/editar')
 def editar_contacto():
     return 'Sección editar contacto'
 
+
+
 ##Se crea ventana de eliminar contacto
 @app.route('/eliminar')
 def eliminar_contacto():
     return 'Sección eliminar contacto'
+
+
 
 if __name__ == '__main__':
     app.run(port=3000, debug = True)
