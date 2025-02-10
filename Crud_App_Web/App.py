@@ -1,5 +1,5 @@
 #Importamos librerias
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
@@ -18,9 +18,16 @@ def Index():
     return render_template('index.html')
 
 ##Se crea ventana de añadir contacto
-@app.route('/añadir', method=['POST'])
+@app.route('/añadir', methods=['POST'])
 def añadir_contacto():
-    
+    if request.method == 'POST':
+        fullname = request.form['fullname']
+        phone = request.form['phone']
+        email = request.form['email']
+        print(fullname)
+        print(phone)
+        print(email)
+        return 'dato recibido'
 
 ##Se crea ventana de editar contacto
 @app.route('/editar')
