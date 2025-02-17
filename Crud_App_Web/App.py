@@ -26,7 +26,7 @@ def Index():
     print(data)
     return render_template('index.html' , contacts = data)
 
-##Se crea ventana de añadir contacto y se conecta con el formulario
+##Se crea ventana de añadir contacto y se conecta con el formulario, junto con el proceso de insert 
 @app.route('/añadir', methods=['POST'])
 def añadir_contacto():
     if request.method == 'POST':
@@ -44,14 +44,17 @@ def añadir_contacto():
 
 
 
-##Se crea ventana de editar contacto
-@app.route('/editar')
-def editar_contacto():
-    return 'Sección editar contacto'
+##Se crea ventana de editar contacto, el string es porque recibe un parametro que es el ID de contact
+@app.route('/editar/<string:id>')
+def obtener_contacto(id):
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM contacts WHERE id = %s', (id))
+    data = mysql.fetchall()
+    print(data[0])
 
 
 
-##Se crea ventana de eliminar contacto, el string es porque recibe un parametro que es el ID de contact
+##Se crea ventana de eliminar contacto y se hace todo el proceso, el string es porque recibe un parametro que es el ID de contact
 @app.route('/eliminar/<string:id>')
 def eliminar_contacto(id):
     cur = mysql.connection.cursor()
