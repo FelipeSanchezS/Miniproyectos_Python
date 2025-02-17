@@ -47,6 +47,11 @@
                     <td>{{ contact.1}}</td>
                     <td>{{ contact.2}}</td>
                     <td>{{ contact.3}}</td>
+                    <td>
+            <!-- el contact es para tomar el ID de cada usar y que no elimine todos los usuario -->
+                        <a href="/editar/{{contact.0}}">Editar</a>
+                        <a href="/eliminar/{{contact.0}}"> Eliminar</a>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>

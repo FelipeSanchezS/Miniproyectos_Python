@@ -51,11 +51,14 @@ def editar_contacto():
 
 
 
-##Se crea ventana de eliminar contacto
-@app.route('/eliminar')
-def eliminar_contacto():
-    return 'Sección eliminar contacto'
-
+##Se crea ventana de eliminar contacto, el string es porque recibe un parametro que es el ID de contact
+@app.route('/eliminar/<string:id>')
+def eliminar_contacto(id):
+    cur = mysql.connection.cursor()
+    cur.execute('DELETE FROM contacts WHERE id = {0}'.format(id))
+    mysql.connection.commit()
+    flash('Contacto eliminado correctamente')
+    return redirect(url_for('Index'))
 
 
 if __name__ == '__main__':
