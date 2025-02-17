@@ -19,6 +19,10 @@ app.secret_key = 'mysecretkey'
 ##Se crea seccion inicial y se llama a la pagina index.html
 @app.route('/')
 def Index():
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM contacts')
+    data = cur.fetchall()
+    print(data)
     return render_template('index.html')
 
 ##Se crea ventana de añadir contacto y se conecta con el formulario
