@@ -19,6 +19,7 @@ app.secret_key = 'mysecretkey'
 ##Se crea seccion inicial y se llama a la pagina index.html
 @app.route('/')
 def Index():
+    ##Acá llamamos los registros de la base de datos y hacemos que se envien al html index
     cur = mysql.connection.cursor()
     cur.execute('SELECT * FROM contacts')
     data = cur.fetchall()

@@ -30,7 +30,7 @@
 
         <button type="submit">Enviar</button>
     </form>
-
+<!-- Creamos la tabla que va contener los registros de la base de datos -->
     <table>
         <thead>
             <tr>
@@ -41,6 +41,7 @@
             </tr>
         </thead>
         <tbody>
+            <!-- Acá llamamos los registros de la tabla que tenemos y que habiamos traido desde python -->
             {% for contact in contacts %}
                 <tr>
                     <td>{{ contact.1}}</td>
