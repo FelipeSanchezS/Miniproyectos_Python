@@ -48,7 +48,8 @@ def añadir_contacto():
 @app.route('/editar/<string:id>')
 def obtener_contacto(id):
     cur = mysql.connection.cursor()
-    cur.execute('SELECT * FROM contacts WHERE id = %s', (id))
+    id=int(id)
+    cur.execute('SELECT * FROM contacts WHERE id = %s', (id,))
     data = cur.fetchall()
     return render_template ('editar.html', contact = data[0])
 
