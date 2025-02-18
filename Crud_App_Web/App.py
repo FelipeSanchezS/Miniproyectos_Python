@@ -49,8 +49,8 @@ def añadir_contacto():
 def obtener_contacto(id):
     cur = mysql.connection.cursor()
     cur.execute('SELECT * FROM contacts WHERE id = %s', (id))
-    data = mysql.fetchall()
-    print(data[0])
+    data = cur.fetchall()
+    return render_template ('editar.html', contact = data[0])
 
 
 
