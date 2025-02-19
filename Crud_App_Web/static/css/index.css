@@ -1,23 +1,146 @@
 body{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: sans-serif;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #6773aa;
+    background-color: #E9F1FA;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px; /* Puedes ajustar esto según tus necesidades */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Esto agregará espacio entre el formulario y la tabla */
+    align-items: center;
 }
 
 form{
-    padding: 50px 55px;
+    padding: 60px 40px 20px 50px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     text-align: center;
     width: 340px;
-    background-color: #737fb2;
+    background-color: #71bed8;
 }
 
 h1{
-    color: #14f9a6;
+    color: #fff;
     font-size: 25px;
+    margin-top: -20px;
+    margin-bottom: 38px;
 }
 
+.messages {
+    margin-bottom: 20px;
+    color: #f2dede;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form-text{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+}
+
+input, button{
+    background-color: #fff;
+    padding: 20px 14px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 15px;
+    color: black;
+}
+
+::placeholder{
+    color: #71bed8;
+    font-size: 15px;
+}
+
+:focus{
+    outline: 1px solid #14f9a6;
+}
+
+.btn{
+    background-color: #30b6e2;
+    color: #146d31;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #3052e9;
+    color: wheat;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Sombra para el efecto de elevación */
+}
+
+table, th, td {
+    border: 1px solid #6773aa;
+    justify-content: center;
+    justify-content: center;
+    background-color: #d1d7f5;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #14f9a6;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+a {
+    color: #14f9a6;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.operation{
+    align-items: center;
+    justify-content: center;
+}
+
+.eliminar{
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+.editar{
+    background-color: rgb(46, 63, 221);
+    color: white;
+    border-radius: 10px;
+    padding: 6px;
+}
