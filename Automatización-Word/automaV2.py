@@ -5,11 +5,6 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 #Creamos el documento
 document = Document()
 
-#En esta parte creamos los diferentes párrafos que vayamos a necesitar
-párrafo1 = document.add_paragraph()
-párrafo2 = document.add_paragraph()
-párrafo3 = document.add_paragraph()
-párrafo4 = document.add_paragraph()
 
 
 #------PÁRRAFO 1-------
@@ -45,9 +40,7 @@ run.font.bold = True
 #En esta parte creamos los diferentes párrafos que vayamos a necesitar
 párrafo3 = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
-párrafo4.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-#Con esto elegimos dirección del párrafo el párrafo
-párrafo3.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+párrafo3.alignment = WD_ALIGN_PARAGRAPH.RIGHT
 #Agregamos párrafo 3 y agregamos textos
 run = párrafo3.add_run("Este es el estilo correspondiente al tercer párrafo del documento que se esta creando.") 
 run.font.name = 'Georgia' #Definimos letra
@@ -59,11 +52,29 @@ run.font.color.rgb = RGBColor(0,0,255)
 #------PÁRRAFO 4-------
 #En esta parte creamos los diferentes párrafos que vayamos a necesitar
 párrafo4 = document.add_paragraph()
+#Con esto elegimos dirección del párrafo el párrafo
+párrafo4.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 #Agregamos párrafo 4 y agregamos textos
 run = párrafo4.add_run("Este es el siguiente párrafo, (párrafo 4) creado con los diferentes estilos ya predefinidos") 
 run.font.name = 'Verdana' #Definimos letra
 run.font.size = Pt(13) #Definimos tamaño
 run.font.color.rgb = RGBColor(0,0,255)
+
+
+
+#------PÁRRAFO 5-------
+#En esta parte creamos los diferentes párrafos que vayamos a necesitar
+párrafo5 = document.add_paragraph()
+#Con esto elegimos dirección del párrafo el párrafo
+párrafo5.alignment = WD_ALIGN_PARAGRAPH.LEFT
+#Agregamos párrafo 4 y agregamos textos
+run = párrafo5.add_run("Este es el siguiente párrafo, (párrafo 5) creado con los diferentes estilos ya predefinidos") 
+run.font.name = 'Courier New' #Definimos letra
+run.font.size = Pt(13) #Definimos tamaño
+run.font.italic = True
+
+
+
 
 #Guardamos el documento
 document.save("AutomatizaciónV2.docx")
