@@ -63,12 +63,13 @@ run.font.color.rgb = RGBColor(0,0,255)
 
 
 #------PÁRRAFO 5-------
+nombre = input('Ingrese su nombre: ')
 #En esta parte creamos los diferentes párrafos que vayamos a necesitar
 párrafo5 = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
 párrafo5.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
-run = párrafo5.add_run("Este es el siguiente párrafo, (párrafo 5) creado con los diferentes estilos ya predefinidos") 
+run = párrafo5.add_run("Este es el siguiente párrafo, (párrafo 5) creado con los diferentes estilos ya predefinidos. por ultimo, su nombre es "+nombre) 
 run.font.name = 'Courier New' #Definimos letra
 run.font.size = Pt(13) #Definimos tamaño
 run.font.italic = True
