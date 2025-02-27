@@ -12,7 +12,7 @@ class WordAutomation:
     def agregar_párrafo(self, texto, fuente = "Arial", tamaño = 12):
         """Agrega un párrafo en especifico"""
         p=self.document.add_paragraph(texto)
-        run = p.run[0]
+        run = p.runs[0]
         run.font.name = fuente
         run.font.size = Pt(tamaño)
 
