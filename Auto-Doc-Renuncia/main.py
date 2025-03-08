@@ -14,7 +14,8 @@ teléfono = input('Ingrese su teléfono: ')
 fechaA = input('Ingrese la fecha: ')
 empresa = input('Ingrese nombre de la empresa: ')
 ciudadPaís = input('Ingrese ciudad y país: ')
-
+cargo = input("Ingrese su cargo desempeñado: ")
+fechaF = input("Ingrese la fecha de efectividad de la renuncia: ")
 
 #------Primera linea-------
 párrafo1 = document.add_paragraph()
@@ -98,6 +99,16 @@ párrafo7 = document.add_paragraph()
 párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
 run = párrafo7.add_run("Estimado/a "+empresa+": ") 
+run.font.name = 'Courier New' #Definimos letra
+run.font.size = Pt(13) #Definimos tamaño
+run.font.italic = True
+
+#------Primer párrafo de la carta-------
+párrafo7 = document.add_paragraph()
+#Con esto elegimos dirección del párrafo el párrafo
+párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
+#Agregamos párrafo 4 y agregamos textos
+run = párrafo7.add_run("Por medio de la presente, me dirijo a usted para presentar mi renuncia al cargo "+ cargo +" en "+ empresa +", con efectividad a partir del "+ fechaF) 
 run.font.name = 'Courier New' #Definimos letra
 run.font.size = Pt(13) #Definimos tamaño
 run.font.italic = True
