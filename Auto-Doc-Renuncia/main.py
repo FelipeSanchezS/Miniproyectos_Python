@@ -23,8 +23,8 @@ párrafo1 = document.add_paragraph()
 párrafo1.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
 run = párrafo1.add_run(nombre) 
-run.font.name = 'Courier New' #Definimos letra
-run.font.size = Pt(13) #Definimos tamaño
+run.font.name = 'Arial' #Definimos letra
+run.font.size = Pt(11)
 run.font.italic = True
 
 #------Segunda linea-------
@@ -33,8 +33,8 @@ párrafo2 = document.add_paragraph()
 párrafo2.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
 run = párrafo2.add_run(dirección) 
-run.font.name = 'Courier New' #Definimos letra
-run.font.size = Pt(13) #Definimos tamaño
+run.font.name = 'Arial' #Definimos letra
+run.font.size = Pt(11)
 run.font.italic = True
 
 #------Tercera linea-------
@@ -43,8 +43,8 @@ párrafo3 = document.add_paragraph()
 párrafo3.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
 run = párrafo3.add_run(email) 
-run.font.name = 'Courier New' #Definimos letra
-run.font.size = Pt(13) #Definimos tamaño
+run.font.name = 'Arial' #Definimos letra
+run.font.size = Pt(11)
 run.font.italic = True
 
 #------Cuarta linea-------
@@ -53,8 +53,8 @@ párrafo4 = document.add_paragraph()
 párrafo4.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
 run = párrafo4.add_run(teléfono) 
-run.font.name = 'Courier New' #Definimos letra
-run.font.size = Pt(13) #Definimos tamaño
+run.font.name = 'Arial' #Definimos letra
+run.font.size = Pt(11)
 run.font.italic = True
 
 #------Quinta linea-------
@@ -63,8 +63,8 @@ párrafo5 = document.add_paragraph()
 párrafo5.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
 run = párrafo5.add_run(fechaA) 
-run.font.name = 'Courier New' #Definimos letra
-run.font.size = Pt(13) #Definimos tamaño
+run.font.name = 'Arial' #Definimos letra
+run.font.size = Pt(11)
 run.font.italic = True
 
 #------Salto de linea-------
@@ -76,8 +76,8 @@ párrafo6 = document.add_paragraph()
 párrafo6.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
 run = párrafo6.add_run(empresa) 
-run.font.name = 'Courier New' #Definimos letra
-run.font.size = Pt(13) #Definimos tamaño
+run.font.name = 'Arial' #Definimos letra
+run.font.size = Pt(11)
 run.font.italic = True
 
 #------Séptima linea-------
@@ -86,8 +86,8 @@ párrafo7 = document.add_paragraph()
 párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
 run = párrafo7.add_run(ciudadPaís) 
-run.font.name = 'Courier New' #Definimos letra
-run.font.size = Pt(13) #Definimos tamaño
+run.font.name = 'Arial' #Definimos letra
+run.font.size = Pt(11)
 run.font.italic = True
 
 #------Salto de linea-------
@@ -99,9 +99,8 @@ párrafo7 = document.add_paragraph()
 párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
 run = párrafo7.add_run("Estimado/a "+empresa+": ") 
-run.font.name = 'Courier New' #Definimos letra
-run.font.size = Pt(13) #Definimos tamaño
-run.font.italic = True
+run.font.name = 'Arial' #Definimos letra
+run.font.size = Pt(11)
 
 #------Primer párrafo de la carta-------
 párrafo7 = document.add_paragraph()
@@ -109,9 +108,8 @@ párrafo7 = document.add_paragraph()
 párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
 run = párrafo7.add_run("Por medio de la presente, me dirijo a usted para presentar mi renuncia al cargo "+ cargo +" en "+ empresa +", con efectividad a partir del "+ fechaF) 
-run.font.name = 'Courier New' #Definimos letra
-run.font.size = Pt(13) #Definimos tamaño
-run.font.italic = True
+run.font.name = 'Arial' #Definimos letra
+run.font.size = Pt(11) #Definimos tamaño
 
 
 
