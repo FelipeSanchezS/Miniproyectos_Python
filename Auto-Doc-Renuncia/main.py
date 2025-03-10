@@ -18,51 +18,51 @@ cargo = input("Ingrese su cargo desempeñado: ")
 fechaF = input("Ingrese la fecha de efectividad de la renuncia: ")
 
 #------Primera linea-------
-párrafo1 = document.add_paragraph()
+párrafo = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
-párrafo1.alignment = WD_ALIGN_PARAGRAPH.LEFT
+párrafo.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
-run = párrafo1.add_run(nombre) 
+run = párrafo.add_run(nombre) 
 run.font.name = 'Arial' #Definimos letra
 run.font.size = Pt(11)
 run.font.italic = True
 
 #------Segunda linea-------
-párrafo2 = document.add_paragraph()
+párrafo = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
-párrafo2.alignment = WD_ALIGN_PARAGRAPH.LEFT
+párrafo.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
-run = párrafo2.add_run(dirección) 
+run = párrafo.add_run(dirección) 
 run.font.name = 'Arial' #Definimos letra
 run.font.size = Pt(11)
 run.font.italic = True
 
 #------Tercera linea-------
-párrafo3 = document.add_paragraph()
+párrafo = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
-párrafo3.alignment = WD_ALIGN_PARAGRAPH.LEFT
+párrafo.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
-run = párrafo3.add_run(email) 
+run = párrafo.add_run(email) 
 run.font.name = 'Arial' #Definimos letra
 run.font.size = Pt(11)
 run.font.italic = True
 
 #------Cuarta linea-------
-párrafo4 = document.add_paragraph()
+párrafo = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
-párrafo4.alignment = WD_ALIGN_PARAGRAPH.LEFT
+párrafo.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
-run = párrafo4.add_run(teléfono) 
+run = párrafo.add_run(teléfono) 
 run.font.name = 'Arial' #Definimos letra
 run.font.size = Pt(11)
 run.font.italic = True
 
 #------Quinta linea-------
-párrafo5 = document.add_paragraph()
+párrafo = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
-párrafo5.alignment = WD_ALIGN_PARAGRAPH.LEFT
+párrafo.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
-run = párrafo5.add_run(fechaA) 
+run = párrafo.add_run(fechaA) 
 run.font.name = 'Arial' #Definimos letra
 run.font.size = Pt(11)
 run.font.italic = True
@@ -71,21 +71,21 @@ run.font.italic = True
 document.add_paragraph()
 
 #------Sexta linea-------
-párrafo6 = document.add_paragraph()
+párrafo = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
-párrafo6.alignment = WD_ALIGN_PARAGRAPH.LEFT
+párrafo.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
-run = párrafo6.add_run(empresa) 
+run = párrafo.add_run(empresa) 
 run.font.name = 'Arial' #Definimos letra
 run.font.size = Pt(11)
 run.font.italic = True
 
 #------Séptima linea-------
-párrafo7 = document.add_paragraph()
+párrafo = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
-párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
+párrafo.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
-run = párrafo7.add_run(ciudadPaís) 
+run = párrafo.add_run(ciudadPaís) 
 run.font.name = 'Arial' #Definimos letra
 run.font.size = Pt(11)
 run.font.italic = True
@@ -94,20 +94,20 @@ run.font.italic = True
 document.add_paragraph()
 
 #------Octava linea-------
-párrafo7 = document.add_paragraph()
+párrafo = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
-párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
+párrafo.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
-run = párrafo7.add_run("Estimado/a "+empresa+": ") 
+run = párrafo.add_run("Estimado/a "+empresa+": ") 
 run.font.name = 'Arial' #Definimos letra
 run.font.size = Pt(11)
 
 #------Primer párrafo de la carta-------
-párrafo7 = document.add_paragraph()
+párrafo = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
-párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
+párrafo.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
-run = párrafo7.add_run("Por medio de la presente, me dirijo a usted para presentar mi renuncia al cargo "+ cargo +" en "+ empresa +", con efectividad a partir del "+ fechaF) 
+run = párrafo.add_run("Por medio de la presente, me dirijo a usted para presentar mi renuncia al cargo "+ cargo +" en "+ empresa +", con efectividad a partir del "+ fechaF) 
 run.font.name = 'Arial' #Definimos letra
 run.font.size = Pt(11) #Definimos tamaño
 
@@ -115,11 +115,11 @@ run.font.size = Pt(11) #Definimos tamaño
 document.add_paragraph()
 
 #------Segundo párrafo de la carta-------
-párrafo7 = document.add_paragraph()
+párrafo = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
-párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
+párrafo.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
-run = párrafo7.add_run("""Ha sido un placer formar parte de esta empresa y agradezco todas las oportunidades que se me han brindado durante mi tiempo aquí. Estoy agradecido/a por el apoyo y la experiencia que he adquirido, los cuales han contribuido significativamente a mi crecimiento profesional.""") 
+run = párrafo.add_run("""Ha sido un placer formar parte de esta empresa y agradezco todas las oportunidades que se me han brindado durante mi tiempo aquí. Estoy agradecido/a por el apoyo y la experiencia que he adquirido, los cuales han contribuido significativamente a mi crecimiento profesional.""") 
 run.font.name = 'Arial' #Definimos letra
 run.font.size = Pt(11) #Definimos tamaño
 
@@ -127,11 +127,11 @@ run.font.size = Pt(11) #Definimos tamaño
 document.add_paragraph()
 
 #------Tercer párrafo de la carta-------
-párrafo7 = document.add_paragraph()
+párrafo = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
-párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
+párrafo.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
-run = párrafo7.add_run("""Durante mi período, me comprometo a asegurar una transición fluida en mis responsabilidades y a colaborar en cualquier proceso que facilite la transferencia de mis tareas a mi sucesor/a. """) 
+run = párrafo.add_run("""Durante mi período, me comprometo a asegurar una transición fluida en mis responsabilidades y a colaborar en cualquier proceso que facilite la transferencia de mis tareas a mi sucesor/a. """) 
 run.font.name = 'Arial' #Definimos letra
 run.font.size = Pt(11) #Definimos tamaño
 
@@ -139,11 +139,11 @@ run.font.size = Pt(11) #Definimos tamaño
 document.add_paragraph()
 
 #------Cuarto párrafo de la carta-------
-párrafo7 = document.add_paragraph()
+párrafo = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
-párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
+párrafo.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
-run = párrafo7.add_run("""Agradezco su comprensión y espero poder mantener el contacto en el futuro. """) 
+run = párrafo.add_run("""Agradezco su comprensión y espero poder mantener el contacto en el futuro. """) 
 run.font.name = 'Arial' #Definimos letra
 run.font.size = Pt(11) #Definimos tamaño
 
@@ -151,11 +151,11 @@ run.font.size = Pt(11) #Definimos tamaño
 document.add_paragraph()
 
 #------Quinto párrafo de la carta-------
-párrafo7 = document.add_paragraph()
+párrafo = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
-párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
+párrafo.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
-run = párrafo7.add_run("""Atentamente, """) 
+run = párrafo.add_run("""Atentamente, """) 
 run.font.name = 'Arial' #Definimos letra
 run.font.size = Pt(11) #Definimos tamaño
 
@@ -163,11 +163,11 @@ run.font.size = Pt(11) #Definimos tamaño
 document.add_paragraph()
 
 #------Quinto párrafo de la carta-------
-párrafo7 = document.add_paragraph()
+párrafo = document.add_paragraph()
 #Con esto elegimos dirección del párrafo el párrafo
-párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
+párrafo.alignment = WD_ALIGN_PARAGRAPH.LEFT
 #Agregamos párrafo 4 y agregamos textos
-run = párrafo7.add_run(nombre) 
+run = párrafo.add_run(nombre) 
 run.font.name = 'Arial' #Definimos letra
 run.font.size = Pt(11) #Definimos tamaño
 
