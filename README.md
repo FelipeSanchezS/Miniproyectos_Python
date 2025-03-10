@@ -1,49 +1,26 @@
-# 🐍 Miniproyectos en Python
+# 🐍 # MiniProyectos Python
 
-Este repositorio contiene tres miniproyectos desarrollados en Python que demuestran diferentes funcionalidades del lenguaje, como el manejo de condicionales, operaciones aritméticas y consumo de APIs. Cada proyecto está diseñado para ser ejecutado desde la consola y enseñar conceptos básicos de programación.
+Este repositorio contiene una serie de mini proyectos en Python enfocados en el uso de la terminal, interfaces gráficas, manejo de bases de datos SQL y proyectos de automatización. El objetivo de estos proyectos es fortalecer mis conocimientos de Python mediante el autoestudio y la implementación de conceptos prácticos.
 
----
+## Contenido
 
-## 📜 Miniproyectos
+A continuación se detalla el tipo de proyectos que encontrarás en este repositorio:
 
-### 1. 🎯 **Juego de Adivinanza de Números**
-El usuario define un rango (número mínimo y máximo), y el programa genera un número aleatorio dentro de ese rango. El usuario debe adivinar el número en base a las pistas proporcionadas.
+- **Proyectos en la Terminal**: Scripts de Python diseñados para ser ejecutados desde la terminal, que permiten practicar y mejorar habilidades de línea de comandos.
+  
+- **Interfaces Gráficas (GUI)**: Aplicaciones con interfaz gráfica de usuario (GUI), construidas usando bibliotecas como `Tkinter`, `PyQt` o `Kivy`, para facilitar la interacción con el usuario.
 
-#### Características:
-- El usuario recibe pistas si el número ingresado es mayor o menor al número objetivo.
-- Se registra la cantidad de intentos necesarios para adivinar correctamente.
+- **Bases de Datos SQL**: Proyectos que integran bases de datos SQL como SQLite o MySQL, para practicar la creación, manejo y consulta de bases de datos desde Python.
 
-### 2. ➕➖✖️➗ **Calculadora Básica**
-Un programa que permite realizar operaciones matemáticas básicas y aritméticas seleccionadas desde un menú.
+- **Automatización de Tareas**: Scripts de automatización que buscan hacer más eficiente el trabajo diario, como la organización de archivos, el envío de correos electrónicos automáticos, o la recopilación de información de la web.
 
-#### Características:
-- Permite realizar las operaciones: suma, resta, multiplicación y división.
-- Valida la entrada para evitar divisiones por cero.
-- Muestra el resultado inmediatamente después de seleccionar una operación.
+## Estructura del Repositorio
 
-### 3. 🕹️ **Consumo de api, información de pokemon**
-Un programa que utiliza la API de Pokémon para mostrar información sobre un Pokémon ingresado por el usuario, además permite exportar a un archivo .txt la información capturada de la API.
+Cada mini proyecto se encuentra dentro de una carpeta con su nombre respectivo. La estructura básica del repositorio es la siguiente:
 
-#### Características:
-- El usuario ingresa el nombre de un Pokémon.
-- El programa muestra:
-  Tipo(s) del Pokémon.
- Movimientos principales del Pokémon.
- Stats de movimistos y su poder
+## Requisitos
 
-### 4. 🎯 **Acortador de URL**
-Un programa que permite al usuario ingresar una URL, y esto genera una URL mas corta de la orginal que enviar
-al sitio web sin ningun problema, esto fue creado con la ayuda de githubcopilot y de la libreria streamlit.
+Para ejecutar los proyectos, es necesario tener Python instalado en tu sistema. También se incluyen algunos módulos que debes instalar como pandas, numpy, entre otros, esto depende el proyecto que se desee viualizar.
 
-#### Características:
-- El usuario ingresa la URL larga.
-- El programa muestra:
-  Una nueva URL mas corta y sencilla de leer
 
-### 5. 🕹️ **Generador de QR**
-Es una aplicación web sencilla que permite al usuario mediante una interfaz grafica hecha con la ayuda de copilot ingresar una url y el programa será capaz de generar un QR que al detectarlo permite direccionar a esta pagina.
-
-#### Características:
-- El usuario ingresa la URL larga.
-- El programa muestra:
-  Un QR que redirecciona a la dirección ingresada anteriormente
+Este `README.md` proporciona una descripción general del repositorio, su estructura, los requisitos y las instrucciones para contribuir. Puedes modificarlo según vayas agregando más proyectos y personalizando tu repositorio. ¡Espero que te sirva!
