@@ -111,7 +111,65 @@ run = párrafo7.add_run("Por medio de la presente, me dirijo a usted para presen
 run.font.name = 'Arial' #Definimos letra
 run.font.size = Pt(11) #Definimos tamaño
 
+#------Salto de linea-------
+document.add_paragraph()
 
+#------Segundo párrafo de la carta-------
+párrafo7 = document.add_paragraph()
+#Con esto elegimos dirección del párrafo el párrafo
+párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
+#Agregamos párrafo 4 y agregamos textos
+run = párrafo7.add_run("""Ha sido un placer formar parte de esta empresa y agradezco todas las oportunidades que se me han brindado durante mi tiempo aquí. Estoy agradecido/a por el apoyo y la experiencia que he adquirido, los cuales han contribuido significativamente a mi crecimiento profesional.""") 
+run.font.name = 'Arial' #Definimos letra
+run.font.size = Pt(11) #Definimos tamaño
+
+#------Salto de linea-------
+document.add_paragraph()
+
+#------Tercer párrafo de la carta-------
+párrafo7 = document.add_paragraph()
+#Con esto elegimos dirección del párrafo el párrafo
+párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
+#Agregamos párrafo 4 y agregamos textos
+run = párrafo7.add_run("""Durante mi período, me comprometo a asegurar una transición fluida en mis responsabilidades y a colaborar en cualquier proceso que facilite la transferencia de mis tareas a mi sucesor/a. """) 
+run.font.name = 'Arial' #Definimos letra
+run.font.size = Pt(11) #Definimos tamaño
+
+#------Salto de linea-------
+document.add_paragraph()
+
+#------Cuarto párrafo de la carta-------
+párrafo7 = document.add_paragraph()
+#Con esto elegimos dirección del párrafo el párrafo
+párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
+#Agregamos párrafo 4 y agregamos textos
+run = párrafo7.add_run("""Agradezco su comprensión y espero poder mantener el contacto en el futuro. """) 
+run.font.name = 'Arial' #Definimos letra
+run.font.size = Pt(11) #Definimos tamaño
+
+#------Salto de linea-------
+document.add_paragraph()
+
+#------Quinto párrafo de la carta-------
+párrafo7 = document.add_paragraph()
+#Con esto elegimos dirección del párrafo el párrafo
+párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
+#Agregamos párrafo 4 y agregamos textos
+run = párrafo7.add_run("""Atentamente, """) 
+run.font.name = 'Arial' #Definimos letra
+run.font.size = Pt(11) #Definimos tamaño
+
+#------Salto de linea-------
+document.add_paragraph()
+
+#------Quinto párrafo de la carta-------
+párrafo7 = document.add_paragraph()
+#Con esto elegimos dirección del párrafo el párrafo
+párrafo7.alignment = WD_ALIGN_PARAGRAPH.LEFT
+#Agregamos párrafo 4 y agregamos textos
+run = párrafo7.add_run(nombre) 
+run.font.name = 'Arial' #Definimos letra
+run.font.size = Pt(11) #Definimos tamaño
 
 #Guardamos el documento
 document.save("Carta_Renuncia "+nombre+".docx")
