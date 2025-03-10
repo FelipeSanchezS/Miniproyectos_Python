@@ -173,3 +173,4 @@ run.font.size = Pt(11) #Definimos tamaño
 
 #Guardamos el documento
 document.save("Carta_Renuncia "+nombre+".docx")
+print('Documento creado de forma correcta')
