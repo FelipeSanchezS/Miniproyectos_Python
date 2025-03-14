@@ -8,3 +8,4 @@ def listar_formatos_soportados():
     print("Formatos soportados")
     for formato in formatos:
         print(f"-{formato}")
+    return formatos
