@@ -35,3 +35,27 @@ def convertir_imagen(ruta_imagen, formato_salida, carpeta_destino = None):
         #Obtener información de la imagen original
         nombre_archivo = os.path.basename(ruta_imagen)
         nombre_base = os.path.splitext(nombre_archivo)[0]
+
+        #Determinamos carpeta destino
+        if carpeta_destino is None:
+            carpeta_destino = os.path.dirname(ruta_imagen)
+
+        #Creamos la carpeta destino si esta no existe
+        if not os.path.exists(carpeta_destino):
+            os.makedirs(carpeta_destino)
+
+        #Creamos la ruta de salida
+        formato_salida = formato_salida.lower().strip(".")
+        ruta_salida = os.path.join(carpeta_destino, f"{nombre_base}.{formato_salida}")
+
+        #Guardamos la imagen con nuevo formato
+        imagen.save(ruta_salida)
+        print("La imagen fue guardada y convertida en "+ruta_salida)
+
+        return ruta_salida
+    
+    except Exception as e:
+        print("Error al convertir la ruta "+e)
+        return None
+    
+    
