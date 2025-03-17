@@ -10,6 +10,16 @@ import openpyxl
 #Función para crear el reporte o informe
 def create_report(template_path, data, chart_data=None):
     st.write("Iniciando la creación del informe")
+    #cargamos documento word
+    doc = Document(template_path)
+    #vamos a validar cara párrafo del documento
+    for paragraph in doc.paragraphs:
+        for key, value in data.items():
+            #validamos las llaves {{}} del arreglo e ingresamos los valores que sea necesarios cuando identifican valores
+            if f'{{{{{key}}}}}' in paragraph.text:
+                st.write("Reemplazando "+key+" con "+value+" en el informe.")
+                paragraph.text = paragraph.text.replace(f'{{{{{key}}}}}', str(value))
+
 
 def main():
     #titulo
