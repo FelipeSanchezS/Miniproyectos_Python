@@ -59,7 +59,7 @@ def convertir_imagen(ruta_imagen, formato_salida, carpeta_destino = None):
         return None
 
 # Función para convertir varias imágenes
-def convertir_imagen(carpeta_origen, formato_salida, carpeta_destino = None):
+def convertir_multiples_imagen(carpeta_origen, formato_salida, carpeta_destino = None):
     """
     Convierte ima imagen a un formato especificado
 
@@ -92,3 +92,48 @@ def convertir_imagen(carpeta_origen, formato_salida, carpeta_destino = None):
             if convertir_imagen(ruta_archivo, formato_salida, carpeta_destino):
                 contador += 1
     return contador
+
+#Definimos la función principal
+def main():
+    """ Función principal del programa"""
+    print("Conversor de imágenes")
+
+    #Mostramos los formatos soportados
+    listar_formatos_soportados()
+    print("\n")
+
+    #Menú de opciones
+    print("Opciones:")
+    print("1. Convertir una imagen")
+    print("2. Convertir todas las imágenes de una carpeta")
+
+    opción = input("\nSelecciona una opción (1 ó 2): ")
+
+    if opción == "1":
+        #convertir una imagen
+        ruta_imagen = input("Ingresa la ruta de la imagen a convertir: ")
+        formato_salida = input("Ingresa el formato de salida: ")
+        carpeta_destino = input("Ingresa la carpeta destino (Opcional): ")
+
+        if not carpeta_destino:
+            carpeta_destino = None
+        
+        convertir_imagen(ruta_imagen, formato_salida, carpeta_destino)
+    
+    elif opción == "2":
+        #convertir una imagen
+        carpeta_origen = input("Ingresa la ruta de la imagen a convertir: ")
+        formato_salida = input("Ingresa el formato de salida: ")
+        carpeta_destino = input("Ingresa la carpeta destino (Opcional): ")
+
+        if not carpeta_destino:
+            carpeta_destino = None
+
+        num_convertidas = convertir_multiples_imagen(carpeta_origen, formato_salida, carpeta_destino)
+        print("Se convirtieron "+num_convertidas+" imágenes exitosamente. ")
+    
+    else:
+        print("Opción no valida.")
+
+if __name__ == "__main__":
+    main()
