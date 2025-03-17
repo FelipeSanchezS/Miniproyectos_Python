@@ -57,5 +57,38 @@ def convertir_imagen(ruta_imagen, formato_salida, carpeta_destino = None):
     except Exception as e:
         print("Error al convertir la ruta "+e)
         return None
+
+# Función para convertir varias imágenes
+def convertir_imagen(carpeta_origen, formato_salida, carpeta_destino = None):
+    """
+    Convierte ima imagen a un formato especificado
+
+    Args:
+        carpeta_origen: Ruta de la imagen a convertir
+        formato_salida: Formato al que se convertirá (ej: PNG)
+        carpeta_destino: Carpeta donde se guardará la imagen convertida (Opcional)
+
+    Returns:
+        int: Número de imágenes convertidas exitosamente
+    """
+    #Verificamos si la carpeta existe
+    if not os.path.exists(carpeta_origen):
+        print("Error, la carpeta "+carpeta_destino+" No existe")
+        return 0
     
-    
+    #Exenciones de imágenes mas comunes
+    extensiones_imagen = ["JPG", "JPEG", "PNG", "GIF", "BMP", "TIFF", "WEBP"]
+
+    #Contador de imágenes convertidas
+    contador = 0
+
+    #Recorremos todos los archivos de la carpeta
+    for archivo in os.listdir(carpeta_origen):
+        ruta_archivo = os.path.join(carpeta_origen, archivo)
+
+        #verificar si es un archivo y tiene extensión de imagen
+        if os.path.isfile(ruta_archivo) and any(archivo.lower().endswith(ext) for ext in extensiones_imagen):
+            #convertir la imagen
+            if convertir_imagen(ruta_archivo, formato_salida, carpeta_destino):
+                contador += 1
+    return contador
