@@ -17,9 +17,15 @@ def create_report(template_path, data, chart_data=None):
         for key, value in data.items():
             #validamos las llaves {{}} del arreglo e ingresamos los valores que sea necesarios cuando identifican valores
             if f'{{{{{key}}}}}' in paragraph.text:
-                st.write("Reemplazando "+key+" con "+value+" en el informe.")
+                st.write(f"Reemplazando {key} con {value} en el informe.")
                 paragraph.text = paragraph.text.replace(f'{{{{{key}}}}}', str(value))
+    
+    #Guardamos en la memoria
+    output = io.BytesIO()
+    doc.save(output)
+    output.seek(0)
 
+    st.write("Reporte creado con éxito!")
 
 def main():
     #titulo
