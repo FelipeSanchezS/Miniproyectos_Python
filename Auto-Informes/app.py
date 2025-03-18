@@ -18,7 +18,7 @@ def create_report(template_path, data, chart_data=None):
             #validamos las llaves {{}} del arreglo e ingresamos los valores que sea necesarios cuando identifican valores
             if f'{{{{{key}}}}}' in paragraph.text:
                 st.write(f"Reemplazando {key} con {value} en el informe.")
-                paragraph.text = paragraph.text.replace(f'{{{{{key}}}}}', str(value))
+            paragraph.text = paragraph.text.replace(f'{{{{{key}}}}}', str(value))
     
     #Guardamos en la memoria
     output = io.BytesIO()
@@ -26,6 +26,10 @@ def create_report(template_path, data, chart_data=None):
     output.seek(0)
 
     st.write("Reporte creado con éxito!")
+
+    return output
+
+
 
 def main():
     #titulo
@@ -57,5 +61,8 @@ def main():
         #Boton para generar informe, al darle click me lleva la función de create_report
         if st.button("Generar informe"):
             output = create_report(template_file, selected_data)
+            #Creamos botón de descarga
+            st.download_button("Descarga tu informe ", output, "informe-generado.docx","application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+            
 
 main()
