@@ -58,6 +58,8 @@ def main():
         selected_data = df.iloc[row_index].to_dict()
         # st.write(selected_data)
 
+        #Sección para agregar el gráfico
+
         #Boton para generar informe, al darle click me lleva la función de create_report
         if st.button("Generar informe"):
             output = create_report(template_file, selected_data)
