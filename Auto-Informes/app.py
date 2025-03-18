@@ -59,8 +59,26 @@ def main():
         # st.write(selected_data)
 
         #Sección para agregar el gráfico
+        generate_chart = st.checkbox("Generar grafico: ")
+        chart_data = None
 
-        #Boton para generar informe, al darle click me lleva la función de create_report
+        if generate_chart:
+            chart_title = st.text_input("Titulo del gráfico" , "Gráfico de datos" )
+            x_column = st.selectbox("Columna para eje X", options=df.columns)
+            y_column = st.selectbox("Columna para eje Y", options=df.columns)
+
+            #Aca entregamos los datos del dataset a la gráfica
+            chart_data = {
+                'title': chart_title,
+                'labels': df[x_column].tolist(),
+                'values': df[y_column].tolist(),
+                'xlabel': x_column,
+                'ylabel':y_column
+            }
+
+            st.write("Los datos del gráfico son: ", chart_data)
+
+        #Botón para generar informe, al darle click me lleva la función de create_report
         if st.button("Generar informe"):
             output = create_report(template_file, selected_data)
             #Creamos botón de descarga
