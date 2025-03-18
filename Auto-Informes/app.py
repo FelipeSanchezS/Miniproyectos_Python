@@ -19,6 +19,15 @@ def create_report(template_path, data, chart_data=None):
             if f'{{{{{key}}}}}' in paragraph.text:
                 st.write(f"Reemplazando {key} con {value} en el informe.")
             paragraph.text = paragraph.text.replace(f'{{{{{key}}}}}', str(value))
+
+    #Sección de crear el gráfico
+    if chart_data is not None:
+        st.write("Generando el gráfico")
+        plt.figure(figsize=(6,4))
+        plt.bar(chart_data['labels'], chart_data['values'])
+        plt.title(chart_data['title'])
+        plt.xlabel(chart_data.get('xlabel', ''))
+        plt.ylabel(chart_data.get('ylabel', ''))
     
     #Guardamos en la memoria
     output = io.BytesIO()
@@ -28,6 +37,7 @@ def create_report(template_path, data, chart_data=None):
     st.write("Reporte creado con éxito!")
 
     return output
+
 
 
 
@@ -80,7 +90,7 @@ def main():
 
         #Botón para generar informe, al darle click me lleva la función de create_report
         if st.button("Generar informe"):
-            output = create_report(template_file, selected_data)
+            output = create_report(template_file, selected_data, chart_data)
             #Creamos botón de descarga
             st.download_button("Descarga tu informe ", output, "informe-generado.docx","application/vnd.openxmlformats-officedocument.wordprocessingml.document")
             
