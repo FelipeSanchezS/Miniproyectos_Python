@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 from docx import Document
 from docx.shared import Inches
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import io
 import openpyxl
 
@@ -28,6 +28,17 @@ def create_report(template_path, data, chart_data=None):
         plt.title(chart_data['title'])
         plt.xlabel(chart_data.get('xlabel', ''))
         plt.ylabel(chart_data.get('ylabel', ''))
+        img_buffer = io.BytesIO()
+        plt.savefig(img_buffer, format = 'png')
+        img_buffer.seek(0)
+        st.write("Insertando gráfico en el marcador del documento!")
+
+        for paragraph in doc.paragraphs:
+            for run in paragraph.runs:
+                if '[Aquí se insertará el grafico]' in run.text:
+                    run.text = run.text.replace('[Aquí se insertará el grafico]', '')
+                    run.add_picture(img_buffer, width=Inches(6))
+
     
     #Guardamos en la memoria
     output = io.BytesIO()
