@@ -2,6 +2,7 @@
 import streamlit
 from faker import fake
 import pandas as pd
+import io
 
 fake = Faker('es_CO')
 
