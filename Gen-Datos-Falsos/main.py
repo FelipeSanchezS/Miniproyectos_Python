@@ -1,6 +1,6 @@
 #Importamos librerías
-import streamlit
-from faker import fake
+import streamlit as st
+from faker import Faker
 import pandas as pd
 import io
 
@@ -19,3 +19,17 @@ available_fields = {
 def generate_fake_data(fields, num_rows):
     data = {field: [func() for _ in range(num_rows)] for field, func in fields.items()}
     return pd.Dataframe(data)
+
+st.title('Generador de datos falsos con Faker')
+st.write('Selecciona los campos que quieres generar y la cantidad de datos')
+
+#sección de elegir los datos
+selected_fields = st.multiselect('Selecciona los campos', options=list(available_fields.keys()), default=list(available_fields.keys()))
+#sección de cantidad de los datos
+num_rows = st.number_input('Ingrese la cantidad de datos que desea generar', min_value=1, max_value=1000, value=10)
+
+if st.button('Generar datos'):
+    #iteramos en cada uno de los datos
+    selected_funcs = {field: available_fields[field] for field in selected_fields}
+    #Validamos los datos seleccionados
+    generate_fake_data(selected_funcs, num_rows)
