@@ -32,4 +32,13 @@ if st.button('Generar datos'):
     #iteramos en cada uno de los datos
     selected_funcs = {field: available_fields[field] for field in selected_fields}
     #Validamos los datos seleccionados
-    generate_fake_data(selected_funcs, num_rows)
+    df = generate_fake_data(selected_funcs, num_rows)
+
+    output = BytesIO()
+    with pd.ExcelWriter(output, engine='xlswriter') as writer:
+        writer.book.use_constant_memory = True
+        df.to_excel(writer, index=False)
+    output.seek(0)
+
+    st.success('Datos generados con éxito!')
+    st.write(df)
