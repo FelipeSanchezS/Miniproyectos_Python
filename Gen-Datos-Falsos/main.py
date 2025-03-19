@@ -2,7 +2,7 @@
 import streamlit as st
 from faker import Faker
 import pandas as pd
-import io
+from io import BytesIO
 
 fake = Faker('es_CO')
 
@@ -18,7 +18,7 @@ available_fields = {
 
 def generate_fake_data(fields, num_rows):
     data = {field: [func() for _ in range(num_rows)] for field, func in fields.items()}
-    return pd.Dataframe(data)
+    return pd.DataFrame(data)
 
 st.title('Generador de datos falsos con Faker')
 st.write('Selecciona los campos que quieres generar y la cantidad de datos')
@@ -35,7 +35,7 @@ if st.button('Generar datos'):
     df = generate_fake_data(selected_funcs, num_rows)
 
     output = BytesIO()
-    with pd.ExcelWriter(output, engine='xlswriter') as writer:
+    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
         writer.book.use_constant_memory = True
         df.to_excel(writer, index=False)
     output.seek(0)
