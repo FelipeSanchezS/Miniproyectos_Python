@@ -3,7 +3,7 @@ import streamlit
 from faker import fake
 import pandas as pd
 
-fake = Faker('es_CL')
+fake = Faker('es_CO')
 
 available_fields = {
     'Nombre' : fake.name,
