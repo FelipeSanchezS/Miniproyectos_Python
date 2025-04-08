@@ -2,13 +2,14 @@ import openpyxl
 import os
 import pandas as pd
 import seaborn
+from openpyxl.styles import Font, PatterFill, Alignment
 
-
-#Creamos un dataset de ejemplo
-datos = {
-    'Producto': ['Juan', 'Ana', 'Pedro', 'Maria', 'Luis'],
-    'Precio': [1000, 2000, 3000, 4000, 5000],
-    'Cantidad': [2, 4, 6, 8, 10]}
-
-df = pd.DataFrame(datos)
-print(df)
+#Definimos la función de crear excel
+def crear_excel_inicial():
+    #Creamos un nuevo libro de trabajo
+    wb = openpyxl.Workbook()
+    #Creamos una hoja de trabajo activa
+    ws = wb.active
+    ws.title = "Inventario principal"
+    #Guardamos el archivo
+    wb.sabe('Inventario.xlsx')
