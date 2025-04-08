@@ -12,4 +12,12 @@ def crear_excel_inicial():
     ws = wb.active
     ws.title = "Inventario principal"
     #Guardamos el archivo
-    wb.sabe('Inventario.xlsx')
+    wb.save('Inventario.xlsx')
+
+if __name__ == '__main__':
+    #Verificamos si el archivo existe
+    if not os.path.exists('Inventario.xlsx'):
+        crear_excel_inicial()
+        print("Archivo creado")
+    else:
+        print("El archivo ya existe")
