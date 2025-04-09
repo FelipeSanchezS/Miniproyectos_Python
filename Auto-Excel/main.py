@@ -37,6 +37,19 @@ def crear_excel_inicial():
             cell = ws.cell(row=row_num, column=col_num, value=valor)
             cell.alignment = Alignment(horizontal='center')
 
+    #Ajustamos ancho de las filas
+    for col in ws.columns:
+        max_length = 0
+        column = col[0].column_letter  # Get the column name
+        for cell in col:
+            try:
+                if len(str(cell.value)) > max_length:
+                    max_length = len(str(cell.value))
+            except:
+                pass
+        adjusted_width = (max_length + 2)
+        ws.column_dimensions[column].width = adjusted_width
+
     #Guardamos el archivo
     wb.save('Inventario.xlsx')
 
