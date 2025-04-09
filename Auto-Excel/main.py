@@ -2,7 +2,7 @@ import openpyxl
 import os
 import pandas as pd
 import seaborn
-from openpyxl.styles import Font, PatterFill, Alignment
+from openpyxl.styles import Font, PatternFill, Alignment
 
 #Definimos la función de crear excel
 def crear_excel_inicial():
