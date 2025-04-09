@@ -31,6 +31,12 @@ def crear_excel_inicial():
         cell.fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
         cell.alignment = Alignment(horizontal='center')
 
+    #Rellenamos los datos
+    for row_num, fila in enumerate(datos, 2):
+        for col_num, valor in enumerate(fila, 1):
+            cell = ws.cell(row=row_num, column=col_num, value=valor)
+            cell.alignment = Alignment(horizontal='center')
+
     #Guardamos el archivo
     wb.save('Inventario.xlsx')
 
