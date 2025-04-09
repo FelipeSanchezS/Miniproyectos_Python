@@ -27,3 +27,6 @@ def cargar_inventario():
             bottom=openpyxl.styles.Side(style='thin', color='000000')
         )
     return wb, ws
+
+def automatizacion_inventario():
+    """Función para automatizar las operaciones que realiza el inventario"""
