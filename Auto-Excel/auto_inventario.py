@@ -50,7 +50,17 @@ def actualizar_precios(ws, porcentaje_incremento):
         except ValueError:
             print(f"No se pudo procesar la fila {precio_cell.row}. Verifica que los datos sean numéricos.")
 
-
+#Función para alertar si la cantidad es baja
+def verificar_stock(ws, umbral=5):
+    """Verificar si la cantidad de productos es menor que el umbral"""
+    for row in ws.iter_rows(min_row=2):  # Saltamos encabezado
+        cantidad_cell = row[3]  # Columna D - Cantidad
+        try:
+            cantidad = float(cantidad_cell.value) if cantidad_cell.value is not None else 0
+            if cantidad < umbral:
+                print(f"Alerta: El producto en la fila {cantidad_cell.row} tiene bajo stock ({cantidad}).")
+        except ValueError:
+            print(f"No se pudo procesar la fila {cantidad_cell.row}. Verifica que los datos sean numéricos.")
 
 
 
