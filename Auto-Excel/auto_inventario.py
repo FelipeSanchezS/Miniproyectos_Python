@@ -40,15 +40,13 @@ def actualizar_precios(ws, porcentaje_incremento):
             cantidad = float(cantidad_cell.value) if cantidad_cell.value is not None else 0
             precio_actual = float(precio_cell.value)
             nuevo_precio = precio_actual * (1 + porcentaje_incremento / 100)
-
             # Actualizar precio unitario
             precio_cell.value = round(nuevo_precio, 2)
-
             # Recalcular y actualizar precio total
             total_cell.value = round(cantidad * nuevo_precio, 2)
-
         except ValueError:
             print(f"No se pudo procesar la fila {precio_cell.row}. Verifica que los datos sean numéricos.")
+
 
 #Función para alertar si la cantidad es baja
 def verificar_stock(ws, umbral=5):
@@ -59,9 +57,10 @@ def verificar_stock(ws, umbral=5):
             cantidad = float(cantidad_cell.value) if cantidad_cell.value is not None else 0
             if cantidad < umbral:
                 print(f"Alerta: El producto en la fila {cantidad_cell.row} tiene bajo stock ({cantidad}).")
+                #colocamos el color rojo en esa celda
+                cantidad_cell.fill = PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid")
         except ValueError:
             print(f"No se pudo procesar la fila {cantidad_cell.row}. Verifica que los datos sean numéricos.")
-
 
 
 
@@ -74,6 +73,10 @@ def automatizacion_inventario():
     #Acá se actualizan los precios de los productos
     actualizar_precios(ws, porcentaje_incremento=5) #Ejemplo de actualización de precios
     print("Actualizando precios de productos...")
+
+    #Verificamos la cantidad de productos
+    verificar_stock(ws, umbral=5) #Ejemplo de verificación de stock
+    print("Verificando stock de productos...")
     
     wb.save('InventarioV2.xlsx')
     print("El archivo 'InventarioV2.xlsx' ha sido creado y guardado exitosamente.")
