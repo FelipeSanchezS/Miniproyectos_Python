@@ -30,17 +30,28 @@ def cargar_inventario():
 
 
 def actualizar_precios(ws, porcentaje_incremento):
-    """Actualizar los precios de los productos en el inventario"""
-    for row in ws.iter_rows(min_row=2):  # saltamos la fila de encabezado
-        precio_cell = row[4]  # columna 5 (índice 4)
-        if precio_cell.value is None:
-            continue  # saltar si la celda está vacía
+    """Actualizar los precios unitarios y recalcular los precios totales"""
+    for row in ws.iter_rows(min_row=2):  # Saltamos encabezado
+        cantidad_cell = row[3]  # Columna D - Cantidad
+        precio_cell = row[4]    # Columna E - Precio Unitario
+        total_cell = row[5]     # Columna F - Precio Total
+
         try:
+            cantidad = float(cantidad_cell.value) if cantidad_cell.value is not None else 0
             precio_actual = float(precio_cell.value)
             nuevo_precio = precio_actual * (1 + porcentaje_incremento / 100)
-            precio_cell.value = nuevo_precio
+
+            # Actualizar precio unitario
+            precio_cell.value = round(nuevo_precio, 2)
+
+            # Recalcular y actualizar precio total
+            total_cell.value = round(cantidad * nuevo_precio, 2)
+
         except ValueError:
-            print(f"No se pudo convertir el valor '{precio_cell.value}' a número. Saltando fila {precio_cell.row}.")
+            print(f"No se pudo procesar la fila {precio_cell.row}. Verifica que los datos sean numéricos.")
+
+
+
 
 
 
