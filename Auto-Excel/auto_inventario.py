@@ -31,3 +31,12 @@ def cargar_inventario():
 def automatizacion_inventario():
     """Función para automatizar las operaciones que realiza el inventario"""
     wb, ws = cargar_inventario()
+    if not wb:
+        return
+    
+    wb.save('InventarioV2.xlsx')
+    print("El archivo 'InventarioV2.xlsx' ha sido creado y guardado exitosamente.")
+
+if __name__ == "__main__":
+    automatizacion_inventario()
+
