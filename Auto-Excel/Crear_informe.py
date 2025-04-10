@@ -17,9 +17,9 @@ def crear_excel_inicial():
 
     #Rellenamos con datos aleatorios
     datos = [
-        [1, 'Producto A', 'Descripción A', 10, 5.0, 50.0],
+        [1, 'Producto A', 'Descripción A', 1, 5.0, 50.0],
         [2, 'Producto B', 'Descripción B', 20, 3.0, 60.0],
-        [3, 'Producto C', 'Descripción C', 15, 4.0, 60.0],
+        [3, 'Producto C', 'Descripción C', 3, 4.0, 60.0],
         [4, 'Producto D', 'Descripción D', 30, 2.0, 60.0],
         [5, 'Producto E', 'Descripción E', 25, 1.0, 25.0]
     ]

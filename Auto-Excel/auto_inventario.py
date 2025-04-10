@@ -74,7 +74,7 @@ def automatizacion_inventario():
     actualizar_precios(ws, porcentaje_incremento=5) #Ejemplo de actualización de precios
     print("Actualizando precios de productos...")
 
-    #Verificamos la cantidad de productos
+    #Acá se verifica el stock de los productos
     verificar_stock(ws, umbral=5) #Ejemplo de verificación de stock
     print("Verificando stock de productos...")
     
