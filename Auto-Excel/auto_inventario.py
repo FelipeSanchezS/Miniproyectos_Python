@@ -75,6 +75,13 @@ def generar_reporte_diario(ws):
     # Copiar encabezados
     for col_num, cell in enumerate(ws[1], 1):
         reporte_ws.cell(row=1, column=col_num, value=cell.value).font = Font(bold=True)
+    # Copiar datos
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        reporte_ws.append(row)
+    
+    #añadir estadísticas
+    
+    return wb
 
 
 def automatizacion_inventario():
@@ -90,6 +97,8 @@ def automatizacion_inventario():
     #Acá se verifica el stock de los productos
     verificar_stock(ws, umbral=5) #Ejemplo de verificación de stock
     print("Verificando stock de productos...")
+
+    wb = generar_reporte_diario()
     
     wb.save('InventarioV2.xlsx')
     print("El archivo 'InventarioV2.xlsx' ha sido creado y guardado exitosamente.")
