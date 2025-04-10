@@ -63,6 +63,19 @@ def verificar_stock(ws, umbral=5):
             print(f"No se pudo procesar la fila {cantidad_cell.row}. Verifica que los datos sean numéricos.")
 
 
+#Creamos un infome diario con la información del inventario
+def generar_reporte_diario(ws):
+    """Generar un informe diario del inventario"""
+    wb, ws = cargar_inventario()
+    if not wb:
+        return
+    #crear hoja nueva con reporte
+    fecha_actual = datetime.datetime.now().strftime("%Y-%m-%d")
+    reporte_ws = wb.create_sheet(title=f"Reporte {fecha_actual}")
+    # Copiar encabezados
+    for col_num, cell in enumerate(ws[1], 1):
+        reporte_ws.cell(row=1, column=col_num, value=cell.value).font = Font(bold=True)
+
 
 def automatizacion_inventario():
     """Función para automatizar las operaciones que realiza el inventario"""
