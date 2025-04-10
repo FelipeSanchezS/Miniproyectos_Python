@@ -29,12 +29,19 @@ def cargar_inventario():
     return wb, ws
 
 
-def actualizar_precios(ws, precios):
+def actualizar_precios(ws, porcentaje_incremento):
     """Actualizar los precios de los productos en el inventario"""
-    for row in ws.iter_rows(min_row=2, max_col=2, values_only=True):
-        precio_actual = float(ws.cell(row=row[0], column=5).value)
-        nuevo_precio = precio_actual*(1 + precios[row[0]]/100)
-        ws.cell(row=row[0], column=5, value=nuevo_precio)
+    for row in ws.iter_rows(min_row=2):  # saltamos la fila de encabezado
+        precio_cell = row[4]  # columna 5 (índice 4)
+        if precio_cell.value is None:
+            continue  # saltar si la celda está vacía
+        try:
+            precio_actual = float(precio_cell.value)
+            nuevo_precio = precio_actual * (1 + porcentaje_incremento / 100)
+            precio_cell.value = nuevo_precio
+        except ValueError:
+            print(f"No se pudo convertir el valor '{precio_cell.value}' a número. Saltando fila {precio_cell.row}.")
+
 
 
 def automatizacion_inventario():
@@ -44,7 +51,7 @@ def automatizacion_inventario():
         return
     print("Sistema de Automatización de inventario")
     #Acá se actualizan los precios de los productos
-    actualizar_precios(ws, {1: 10, 2: 15, 3: 5, 4: 20, 5: 10}) #Ejemplo de actualización de precios
+    actualizar_precios(ws, porcentaje_incremento=5) #Ejemplo de actualización de precios
     print("Actualizando precios de productos...")
     
     wb.save('InventarioV2.xlsx')
