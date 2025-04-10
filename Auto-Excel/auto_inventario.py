@@ -30,3 +30,4 @@ def cargar_inventario():
 
 def automatizacion_inventario():
     """Función para automatizar las operaciones que realiza el inventario"""
+    wb, ws = cargar_inventario()
