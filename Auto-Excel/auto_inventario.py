@@ -28,6 +28,16 @@ def cargar_inventario():
         )
     return wb, ws
 
+
+def actualizar_precios(ws, precios):
+    """Actualizar los precios de los productos en el inventario"""
+    for row in ws.iter_rows(min_row=2, max_col=2, values_only=True):
+        producto = row[0]
+        if producto in precios:
+            ws.cell(row=row[0].row, column=2).value = precios[producto]
+            ws.cell(row=row[0].row, column=2).font = Font(color="FF0000")
+
+
 def automatizacion_inventario():
     """Función para automatizar las operaciones que realiza el inventario"""
     wb, ws = cargar_inventario()
