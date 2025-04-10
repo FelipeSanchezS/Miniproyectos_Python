@@ -32,10 +32,9 @@ def cargar_inventario():
 def actualizar_precios(ws, precios):
     """Actualizar los precios de los productos en el inventario"""
     for row in ws.iter_rows(min_row=2, max_col=2, values_only=True):
-        producto = row[0]
-        if producto in precios:
-            ws.cell(row=row[0].row, column=2).value = precios[producto]
-            ws.cell(row=row[0].row, column=2).font = Font(color="FF0000")
+        precio_actual = float(ws.cell(row=row[0], column=5).value)
+        nuevo_precio = precio_actual*(1 + precios[row[0]]/100)
+        ws.cell(row=row[0], column=5, value=nuevo_precio)
 
 
 def automatizacion_inventario():
@@ -43,6 +42,10 @@ def automatizacion_inventario():
     wb, ws = cargar_inventario()
     if not wb:
         return
+    print("Sistema de Automatización de inventario")
+    #Acá se actualizan los precios de los productos
+    actualizar_precios(ws, {1: 10, 2: 15, 3: 5, 4: 20, 5: 10}) #Ejemplo de actualización de precios
+    print("Actualizando precios de productos...")
     
     wb.save('InventarioV2.xlsx')
     print("El archivo 'InventarioV2.xlsx' ha sido creado y guardado exitosamente.")
