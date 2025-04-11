@@ -85,8 +85,9 @@ def generar_reporte_diario(ws):
     reporte_ws.cell(row=row_stats, column=1).font = Font(bold=True)
     reporte_ws.cell(row=row_stats, column=1).fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
     reporte_ws.cell(row=row_stats + 1, column=1, value="Productos Diferentes:")
-    reporte_ws.cell(row=row_stats +1, column=1, value=f"COUNTA(B2:B{ws.max_row})")
+    reporte_ws.cell(row=row_stats + 1, column=2, value=f"=COUNTA(B2:B{ws.max_row})")
     reporte_ws.cell(row=row_stats + 2, column=1, value="Total Productos:")
+    reporte_ws.cell(row=row_stats + 2, column=2, value=f"=SUM(D2:B{ws.max_row})")
     
     return wb
 
@@ -105,7 +106,9 @@ def automatizacion_inventario():
     verificar_stock(ws, umbral=5) #Ejemplo de verificación de stock
     print("Verificando stock de productos...")
 
-    wb = generar_reporte_diario()
+    wb = generar_reporte_diario(datetime.datetime.now().strftime("%Y-%m-%d"))
+    if not wb:
+        return
     
     wb.save('InventarioV2.xlsx')
     print("El archivo 'InventarioV2.xlsx' ha sido creado y guardado exitosamente.")
