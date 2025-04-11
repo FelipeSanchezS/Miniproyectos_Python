@@ -79,7 +79,14 @@ def generar_reporte_diario(ws):
     for row in ws.iter_rows(min_row=2, values_only=True):
         reporte_ws.append(row)
     
-    #añadir estadísticas, esta sección es para crear estadisticas
+    #añadir estadísticas, esta sección es para crear estadísticas
+    row_stats = ws.max_row + 2
+    reporte_ws.cell(row=row_stats, column=1, value="Estadísticas")
+    reporte_ws.cell(row=row_stats, column=1).font = Font(bold=True)
+    reporte_ws.cell(row=row_stats, column=1).fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
+    reporte_ws.cell(row=row_stats + 1, column=1, value="Productos Diferentes:")
+    reporte_ws.cell(row=row_stats +1, column=1, value=f"COUNTA(B2:B{ws.max_row})")
+    reporte_ws.cell(row=row_stats + 2, column=1, value="Total Productos:")
     
     return wb
 
