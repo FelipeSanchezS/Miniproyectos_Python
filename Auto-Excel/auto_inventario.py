@@ -79,7 +79,7 @@ def generar_reporte_diario(ws):
     for row in ws.iter_rows(min_row=2, values_only=True):
         reporte_ws.append(row)
     
-    #añadir estadísticas
+    #añadir estadísticas, esta sección es para crear estadisticas
     
     return wb
 
