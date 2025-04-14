@@ -117,6 +117,7 @@ def automatizacion_inventario():
     if not wb:
         return
     print("Sistema de Automatización de inventario")
+
     #Acá se actualizan los precios de los productos
     actualizar_precios(ws, porcentaje_incremento=5) #Ejemplo de actualización de precios
     print("Actualizando precios de productos...")
@@ -129,8 +130,8 @@ def automatizacion_inventario():
     if not wb:
         return
     
-    wb.save('InventarioV2.xlsx')
-    print("El archivo 'InventarioV2.xlsx' ha sido creado y guardado exitosamente.")
+    wb.save('Inventario.xlsx')
+    print("El archivo 'Inventario.xlsx' ha sido creado y guardado exitosamente.")
 
 if __name__ == "__main__":
     automatizacion_inventario()
