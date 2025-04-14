@@ -26,7 +26,21 @@ def cargar_inventario():
             top=openpyxl.styles.Side(style='thin', color='000000'),
             bottom=openpyxl.styles.Side(style='thin', color='000000')
         )
+    # Ajustar el ancho de las columnas
+    for col in ws.columns:
+        max_length = 0
+        column = col[0].column_letter  # Get the column name
+        for cell in col:
+            try:
+                if len(str(cell.value)) > max_length:
+                    max_length = len(str(cell.value))
+            except:
+                pass
+        adjusted_width = (max_length + 2)
+        ws.column_dimensions[column].width = adjusted_width
+
     return wb, ws
+
 
 
 def actualizar_precios(ws, porcentaje_incremento):
@@ -67,6 +81,7 @@ def verificar_stock(ws, umbral=5):
 def generar_reporte_diario(ws):
     """Generar un informe diario del inventario"""
     wb, ws = cargar_inventario()
+
     if not wb:
         return
     #crear hoja nueva con reporte
@@ -78,6 +93,7 @@ def generar_reporte_diario(ws):
     # Copiar datos
     for row in ws.iter_rows(min_row=2, values_only=True):
         reporte_ws.append(row)
+
     
     #añadir estadísticas, esta sección es para crear estadísticas
     row_stats = ws.max_row + 2
@@ -94,6 +110,7 @@ def generar_reporte_diario(ws):
 
 def automatizacion_inventario():
     """Función para automatizar las operaciones que realiza el inventario"""
+
     wb, ws = cargar_inventario()
     if not wb:
         return
