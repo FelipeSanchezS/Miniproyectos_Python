@@ -117,11 +117,11 @@ def automatizacion_inventario():
     if not wb:
         return
     print("Sistema de Automatización de inventario")
-
+    print("---------------------------------------------------")
     #Acá se actualizan los precios de los productos
     actualizar_precios(ws, porcentaje_incremento=5) #Ejemplo de actualización de precios
     print("Actualizando precios de productos...")
-
+    print("---------------------------------------------------")
     #Acá se verifica el stock de los productos
     verificar_stock(ws, umbral=5) #Ejemplo de verificación de stock
     print("Verificando stock de productos...")
@@ -129,7 +129,7 @@ def automatizacion_inventario():
     wb = generar_reporte_diario(datetime.datetime.now().strftime("%Y-%m-%d"))
     if not wb:
         return
-    
+    print("---------------------------------------------------")
     wb.save('Inventario.xlsx')
     print("El archivo 'Inventario.xlsx' ha sido creado y guardado exitosamente.")
 
