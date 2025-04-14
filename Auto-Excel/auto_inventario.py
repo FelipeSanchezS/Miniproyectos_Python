@@ -104,6 +104,8 @@ def generar_reporte_diario(ws):
     reporte_ws.cell(row=row_stats + 1, column=2, value=f"=COUNTA(B2:B{ws.max_row})")
     reporte_ws.cell(row=row_stats + 2, column=1, value="Total Productos:")
     reporte_ws.cell(row=row_stats + 2, column=2, value=f"=SUM(D2:B{ws.max_row})")
+    reporte_ws.cell(row=row_stats + 3, column=1, value="Valor Total del Inventario:")
+    reporte_ws.cell(row=row_stats + 3, column=2, value=f"=SUM(F2:F{ws.max_row})")
     
     return wb
 
