@@ -42,7 +42,7 @@ def automatizacion_avanzada():
     print("---------------------------------")
     print("Creando gráficos automaticos")
     crear_grafico_ventas(ws)
-
+    print("---------------------------------")
     #Guardamos cambios
     wb.save("InventarioV3.xlsx")
 
