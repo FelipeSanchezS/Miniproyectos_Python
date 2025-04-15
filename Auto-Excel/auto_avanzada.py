@@ -4,7 +4,6 @@ import openpyxl
 from openpyxl.styles import Font, Color, PatternFill, Border, Side
 from openpyxl.chart import BarChart, Reference, LineChart, PieChart, ScatterChart
 from openpyxl.worksheet.table import Table, TableStyleInfo
-from openpyxl.drawing.fill import GradientFill
 from openpyxl.worksheet.datavalidation import DataValidation
 import datetime
 import os
@@ -28,4 +27,24 @@ def crear_grafico_ventas(ws):
     grafico.set_categories(categorias)
 
     #Añadimos grafico a la hoja
-    ws.add_chart(grafico, "G2")
+    ws.add_chart(grafico, "H3")
+
+
+#Creamos función para llamar los gráficos
+def automatizacion_avanzada():
+    """Función principal para cargar la automatización"""
+    
+    #Cargamos el archivo existente
+    wb = openpyxl.load_workbook("Inventario.xlsx")
+    ws = wb.active
+    print("---------------------------------")
+    print("Cargando archivo...")
+    print("---------------------------------")
+    print("Creando gráficos automaticos")
+    crear_grafico_ventas(ws)
+
+    #Guardamos cambios
+    wb.save("InventarioV3.xlsx")
+
+if __name__ == "__main__":
+    automatizacion_avanzada()
