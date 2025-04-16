@@ -12,7 +12,7 @@ import win32com.client as win32
 #Creamos función para gráfico de ventas
 def crear_grafico_ventas(ws):
     """Crea un gráfico de barras para las ventas por mes."""
-    #creaos un gráfico de barras
+    #creamos un gráfico de barras
     grafico = BarChart()
     grafico.title = "Cantidad de productos"
     grafico.x_axis.title = "Productos"
@@ -26,9 +26,14 @@ def crear_grafico_ventas(ws):
     grafico.add_data(datos, titles_from_data=True)
     grafico.set_categories(categorias)
 
-    #Añadimos grafico a la hoja
+    #Añadimos gráfico a la hoja
     ws.add_chart(grafico, "H3")
 
+
+    #Se crea un segundo gráfico
+def crear_grafico_categorias(ws):
+    """Crea un gráfico de torta para validar la distribución de categorías"""
+    
 
 #Creamos función para llamar los gráficos
 def automatizacion_avanzada():
