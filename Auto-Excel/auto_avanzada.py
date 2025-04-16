@@ -46,6 +46,9 @@ def crear_grafico_categorias(ws):
     grafico.add.data(datos, titles_from_data=True)
     grafico.set_categories(categorias)
 
+    #Añadimos gráfico a la hoja
+    ws.add_chart(grafico, "H18")
+
 
 #Creamos función para llamar los gráficos
 def automatizacion_avanzada():
@@ -59,6 +62,7 @@ def automatizacion_avanzada():
     print("---------------------------------")
     print("Creando gráficos automaticos")
     crear_grafico_ventas(ws)
+    crear_grafico_categorias(ws)
     print("---------------------------------")
     #Guardamos cambios
     wb.save("InventarioV3.xlsx")
