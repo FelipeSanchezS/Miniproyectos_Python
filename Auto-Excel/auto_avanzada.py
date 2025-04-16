@@ -33,21 +33,22 @@ def crear_grafico_ventas(ws):
     #Se crea un segundo gráfico
 def crear_grafico_categorias(ws):
     """Crea un gráfico de torta para validar la distribución de categorías"""
-    #Creamos grafico de torta
+    # Creamos gráfico de torta
     grafico = PieChart()
     grafico.title = "Distribución de categorías"
     grafico.style = 10
 
-    #agregamos datos al gráfico
-    datos = Reference(ws, min_col=4, min_row=1, max_row=ws.max_row, max_col=3)
+    # Agregamos datos al gráfico
+    datos = Reference(ws, min_col=4, min_row=2, max_row=ws.max_row)  # min_row=2 para evitar título
     categorias = Reference(ws, min_col=1, min_row=2, max_row=ws.max_row)
 
-    #Entregamos los datos al gráfico
-    grafico.add.data(datos, titles_from_data=True)
+    # Entregamos los datos al gráfico
+    grafico.add_data(datos, titles_from_data=False)
     grafico.set_categories(categorias)
 
-    #Añadimos gráfico a la hoja
+    # Añadimos gráfico a la hoja
     ws.add_chart(grafico, "H18")
+
 
 
 #Creamos función para llamar los gráficos
