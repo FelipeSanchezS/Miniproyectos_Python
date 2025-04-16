@@ -42,6 +42,10 @@ def crear_grafico_categorias(ws):
     datos = Reference(ws, min_col=4, min_row=1, max_row=ws.max_row, max_col=3)
     categorias = Reference(ws, min_col=1, min_row=2, max_row=ws.max_row)
 
+    #Entregamos los datos al gráfico
+    grafico.add.data(datos, titles_from_data=True)
+    grafico.set_categories(categorias)
+
 
 #Creamos función para llamar los gráficos
 def automatizacion_avanzada():
