@@ -39,7 +39,7 @@ def crear_grafico_categorias(ws):
     grafico.style = 10
 
     #agregamos datos al gráfico
-    datos = Reference(ws, min_col=3, min_row=1, max_row=ws.max_row, max_col=3)
+    datos = Reference(ws, min_col=4, min_row=1, max_row=ws.max_row, max_col=3)
     categorias = Reference(ws, min_col=1, min_row=2, max_row=ws.max_row)
 
 
