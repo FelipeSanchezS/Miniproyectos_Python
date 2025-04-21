@@ -67,6 +67,12 @@ def crear_tabla(wb, ws):
     #Añadimos la tabla al excel
     ws.add_table(tab)
 
+#creamos función para validar datos
+def aplicar_validacion_datos(ws):
+    """Aplicar validación de datos a la columna de categorías"""
+    #validamos por categoríassss
+    
+
 #Creamos función para llamar los gráficos
 def automatizacion_avanzada():
     """Función principal para cargar la automatización"""
