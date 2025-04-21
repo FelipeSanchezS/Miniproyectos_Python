@@ -63,6 +63,9 @@ def crear_tabla(wb, ws):
         showRowStripes=True,
         showColumnStripes=True
     )
+    tab.tableStyleInfo = style
+    #Añadimos la tabla al excel
+    ws.add_table(tab)
 
 #Creamos función para llamar los gráficos
 def automatizacion_avanzada():
@@ -77,6 +80,9 @@ def automatizacion_avanzada():
     print("Creando gráficos automaticos")
     crear_grafico_ventas(ws)
     crear_grafico_categorias(ws)
+    print("---------------------------------")
+    print("Creando Tabla")
+    crear_tabla(wb, ws)
     print("---------------------------------")
     #Guardamos cambios
     wb.save("InventarioV3.xlsx")
