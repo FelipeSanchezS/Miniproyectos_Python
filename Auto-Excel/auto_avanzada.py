@@ -53,7 +53,16 @@ def crear_grafico_categorias(ws):
 def crear_tabla(wb, ws):
     """Crear tabla"""
     #Convertimos el rango de datos en tabla
-    tab = Table(displayName="TablaInventario", ref="A1:F" + str(ws.max_row))
+    tab = Table(displayName="TablaInventario", ref=f"A1:F{ws.max_row}")
+
+    #Agregamos estilos
+    style = TableStyleInfo(
+        name="TableStyleMedium9",
+        showFirstColumn=False,
+        showLastColumn=False,
+        showRowStripes=True,
+        showColumnStripes=True
+    )
 
 #Creamos función para llamar los gráficos
 def automatizacion_avanzada():
