@@ -49,7 +49,11 @@ def crear_grafico_categorias(ws):
     # Añadimos gráfico a la hoja
     ws.add_chart(grafico, "H18")
 
-
+#Creamos la función de crear tabla
+def crear_tabla(wb, ws):
+    """Crear tabla"""
+    #Convertimos el rango de datos en tabla
+    tab = Table(displayName="TablaInventario", ref="A1:F" + str(ws.max_row))
 
 #Creamos función para llamar los gráficos
 def automatizacion_avanzada():
