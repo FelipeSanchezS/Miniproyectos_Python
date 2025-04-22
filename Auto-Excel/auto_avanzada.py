@@ -73,10 +73,15 @@ def aplicar_validacion_datos(ws):
     #validamos por categorías
     categorias_val = DataValidation(
         type="list",
-        formula1='"Electrónica, Ropa, Alimentos, Juguetes, Libros"',
+        formula1='"Producto A,Producto B,Producto C,Producto D,Producto E"',
         allow_blank=False
     )
-    
+    categorias_val.error = "Por favor ingresar un producto correcto"
+    categorias_val.errorTitle = "Error de validación"
+    ws.add_data_validation(categorias_val)
+    categorias_val.add(f"B2:B{ws.max_row}")  # Aplicar validación a la columna B (categorías)
+
+
 
 #Creamos función para llamar los gráficos
 def automatizacion_avanzada():
@@ -94,6 +99,9 @@ def automatizacion_avanzada():
     print("---------------------------------")
     print("Creando Tabla")
     crear_tabla(wb, ws)
+    print("---------------------------------")
+    print("Creando nombres de productos")
+    aplicar_validacion_datos(ws)
     print("---------------------------------")
     #Guardamos cambios
     wb.save("InventarioV3.xlsx")
