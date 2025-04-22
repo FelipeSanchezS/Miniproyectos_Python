@@ -70,7 +70,12 @@ def crear_tabla(wb, ws):
 #creamos función para validar datos
 def aplicar_validacion_datos(ws):
     """Aplicar validación de datos a la columna de categorías"""
-    #validamos por categoríassss
+    #validamos por categorías
+    categorias_val = DataValidation(
+        type="list",
+        formula1='"Electrónica, Ropa, Alimentos, Juguetes, Libros"',
+        allow_blank=False
+    )
     
 
 #Creamos función para llamar los gráficos
