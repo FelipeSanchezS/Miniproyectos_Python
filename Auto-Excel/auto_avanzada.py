@@ -81,6 +81,8 @@ def aplicar_validacion_datos(ws):
     ws.add_data_validation(categorias_val)
     categorias_val.add(f"B2:B{ws.max_row}")  # Aplicar validación a la columna B (categorías)
 
+    #Realizamos la validación del stock de productos (Solo números positivos)
+    
 
 
 #Creamos función para llamar los gráficos
