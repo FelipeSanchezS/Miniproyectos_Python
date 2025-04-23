@@ -108,7 +108,7 @@ def aplicar_formato_condicional(ws):
         end_value=100,
         end_color="00FF00"
     )
-    ws.conditional_formatting.add("C2:C100", color_scale)
+    ws.conditional_formatting.add("F2:F100", color_scale)
 
 #Creamos función para llamar los gráficos
 def automatizacion_avanzada():
