@@ -82,7 +82,14 @@ def aplicar_validacion_datos(ws):
     categorias_val.add(f"B2:B{ws.max_row}")  # Aplicar validación a la columna B (categorías)
 
     #Realizamos la validación del stock de productos (Solo números positivos)
-    
+    stock_val = DataValidation(
+        type="whole",
+        operator="greaterThan",
+        formula1=0,
+        showErrorMessage=True,
+        errorTitle="Error de validación",
+        error="El stock debe ser un número positivo."
+    )
 
 
 #Creamos función para llamar los gráficos
