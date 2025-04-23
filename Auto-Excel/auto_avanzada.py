@@ -93,8 +93,22 @@ def aplicar_validacion_datos(ws):
 
 #Función del formato condicional
 def aplicar_formato_condicional(ws):
-    
-
+    """Aplicamos formatos condicionales avanzados"""
+    from openpyxl.formatting.rule import CellIsRule, ColorScaleRule, IconSetRule
+    #Se importo para aplicar reglas a las celdas
+    #Creamos escala de colores en los precios
+    color_scale = ColorScaleRule(
+        start_type="num",
+        start_value=0,
+        start_color="FF0000",
+        mid_type="num",
+        mid_value=50,
+        mid_color="FFFF00",
+        end_type="num",
+        end_value=100,
+        end_color="00FF00"
+    )
+    ws.conditional_formatting.add("C2:C100", color_scale)
 
 #Creamos función para llamar los gráficos
 def automatizacion_avanzada():
