@@ -91,6 +91,10 @@ def aplicar_validacion_datos(ws):
         error="El stock debe ser un número positivo."
     )
 
+#Función del formato condicional
+def aplicar_formato_condicional(ws):
+    
+
 
 #Creamos función para llamar los gráficos
 def automatizacion_avanzada():
