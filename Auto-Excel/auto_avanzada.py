@@ -130,6 +130,9 @@ def automatizacion_avanzada():
     print("Creando nombres de productos")
     aplicar_validacion_datos(ws)
     print("---------------------------------")
+    print("Creando formato condicional")
+    aplicar_formato_condicional(ws)
+    print("---------------------------------")
     #Guardamos cambios
     wb.save("InventarioV3.xlsx")
 
