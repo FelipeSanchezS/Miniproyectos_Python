@@ -134,7 +134,7 @@ def automatizacion_avanzada():
     aplicar_formato_condicional(ws)
     print("---------------------------------")
     #Guardamos cambios
-    wb.save("InventarioV3.xlsx")
+    wb.save("Inventario.xlsx")
 
 if __name__ == "__main__":
     automatizacion_avanzada()
