@@ -1,7 +1,7 @@
 <?php include 'bases.php'; ?>
 
 <h2>Formulario de Personas</h2>
-<form action="insert.php" method="POST">
+<form action="actualizar.php" method="POST">
     <label for="">Nombre</label>
     <input type="text" name="nombre" placeholder="Nombre" required><br>
     <label for="">Apellido</label>
@@ -13,7 +13,7 @@
     <label for="">Dirección</label>
     <input type="text" name="dirección" placeholder="Dirección" required><br>
     <label for="">Fecha nacimiento</label>
-    <input type="date" name="fecha_nacimiento" required><br>
+    <input type="text" name="fecha_nacimiento" required><br>
     <button type="submit">Guardar</button>
 </form>
 
@@ -36,8 +36,8 @@
                 <td>{$row['direccion']}</td>
                 <td>{$row['fecha_nacimiento']}</td>
                 <td>
-                    <a href='update.php?id={$row['id']}'>Editar</a> |
-                    <a href='delete.php?id={$row['id']}'>Eliminar</a>
+                    <a href='actualizar.php?id={$row['id']}'>Editar</a> |
+                    <a href='eliminar.php?id={$row['id']}'>Eliminar</a>
                 </td>
             </tr>";
     }

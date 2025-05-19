@@ -31,6 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             WHERE id=$id";
 
     $conn->query($sql);
-    header("Location: index.php");
+    header("Location: formulario.php");
 }
 ?>
