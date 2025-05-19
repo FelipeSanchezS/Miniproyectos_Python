@@ -17,6 +17,13 @@
     <button type="submit">Guardar</button>
 </form>
 
+    <h2>Buscar persona</h2>
+    <input type="text" id="busqueda" placeholder="Buscar por nombre o apellido">
+
+    <div id="tabla-dinamica">
+        <!-- Aquí se cargará la tabla actualizada automáticamente -->
+    </div>
+
 <h2>Lista de personas</h2>
 <table border="1">
     <tr>
@@ -49,6 +56,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario CRUD</title>
+
+
+
+
     <style>
         * {
             box-sizing: border-box;
@@ -154,6 +165,23 @@
     </style>
 </head>
 <body>
+        <script>
+            function cargarDatos() {
+                const busqueda = document.getElementById('busqueda').value;
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", "obtener_datos.php?busqueda=" + encodeURIComponent(busqueda), true);
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        document.getElementById("tabla-dinamica").innerHTML = xhr.responseText;
+                    }
+                };
+                xhr.send();
+            }
+
+            setInterval(cargarDatos, 4000); // Actualiza cada 4 segundos
+            document.getElementById("busqueda").addEventListener("input", cargarDatos);
+            window.onload = cargarDatos; // Primera carga
+        </script>
 
 </body>
 </html>
