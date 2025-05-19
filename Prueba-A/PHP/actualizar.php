@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
 ?>
-<form action="update.php" method="POST">
+<form action="actualizar.php" method="POST">
     <input type="hidden" name="id" value="<?= $row['id'] ?>">
     <input type="text" name="nombre" value="<?= $row['nombre'] ?>"><br>
     <input type="text" name="apellido" value="<?= $row['apellido'] ?>"><br>

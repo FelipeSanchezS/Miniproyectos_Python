@@ -1,7 +1,7 @@
 <?php include 'bases.php'; ?>
 
 <h2>Formulario de Personas</h2>
-<form action="actualizar.php" method="POST">
+<form action="insertar.php" method="POST">
     <label for="">Nombre</label>
     <input type="text" name="nombre" placeholder="Nombre" required><br>
     <label for="">Apellido</label>
