@@ -17,7 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <input type="date" name="fecha_nacimiento" value="<?= $row['fecha_nacimiento'] ?>"><br>
     <button type="submit">Actualizar</button>
 </form>
-<?php } else {
+
+<?php } 
+
+else {
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
