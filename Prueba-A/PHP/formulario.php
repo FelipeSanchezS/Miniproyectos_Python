@@ -56,10 +56,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario CRUD</title>
-
-
-
-
     <style>
         * {
             box-sizing: border-box;
